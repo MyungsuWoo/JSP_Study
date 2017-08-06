@@ -13,5 +13,11 @@
 		주소 : <input type="text" name="addr"><br>
 		<input type="submit" value="전송">
 	</form>
+	<h3> post 방식에서 한글 깨짐 방지 </h3>
+	<form method="post" action="InfoServlet">
+		이름 : <input type="text" name="name"><br>
+		주소 : <input type="text" name="addr"><br>
+		<input type="submit" value="전송">
+	</form>
 </body>
 </html>
