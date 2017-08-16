@@ -11,7 +11,7 @@
 		<%
 	} else {
 		request.setAttribute("name", "우명수");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("05_forwarrdResult.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("05_forwardResult.jsp");
 		dispatcher.forward(request, response);
 	}
 %>
