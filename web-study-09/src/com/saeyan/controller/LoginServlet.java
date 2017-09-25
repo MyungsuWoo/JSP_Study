@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 		MemberDAO mDao = MemberDAO.getInstance();
 		int result = mDao.userCheck(userid, pwd);
-		
+
 		if (result == 1) {
 			MemberVO mVo = mDao.getMember(userid);
 			HttpSession session = request.getSession();
@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 		} else if (result == -1) {
 			request.setAttribute("message", "존재하지 않는 회원입니다.");
 		}
-		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
