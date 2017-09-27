@@ -23,3 +23,9 @@ function idCheck() {
 			"toolbar=no, menubar=no, scrollbars=yes, " +
 			"resizable=no, width=450, height=200");
 }
+
+function idok() {
+	opner.frm.userid.value = document.frm.userid.value;
+	opner.frm.reid.value = document.frm.userid.value;
+	self.close();
+}
