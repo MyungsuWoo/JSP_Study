@@ -12,11 +12,11 @@
 <script type="text/javascript" src="member.js"></script>
 </head>
 <body>
-	<h2>회원 전용 페이지</h2>
+	<h2> 회원 전용 페이지 </h2>
 	<form action="logout.do">
 		<table>
 			<tr>
-				<td>안녕하세요. ${loginUser.name }(${loginUser.userid })님</td>
+				<td> 안녕하세요. ${loginUser.name }(${loginUser.userid })님 </td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center">
