@@ -51,4 +51,25 @@ public class ProductDAO {
 		
 		return list;
 	} // selectAllProducts() {
+	
+	// Create r u d
+	public void insertProduct(ProductVO pVo) {
+		String sql = "INSERT INTO PRODUCT VALUES(PRODUCT_SEQ.NEXTVAL, ?, ?, ?, ?)";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pVo.getName());
+			pstmt.setInt(2, pVo.getPrice());
+			pstmt.setString(3, pVo.getPictureUrl());
+			pstmt.setString(4, pVo.getDescription());
+			pstmt.executeUpdate(); // 실행
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 } // ProductDAO {
