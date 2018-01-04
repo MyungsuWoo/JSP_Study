@@ -45,8 +45,12 @@ public class ProductDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String code = request.getParameter("code");
+		
+		ProductDAO pDao = ProductDAO.getInstance();
+		pDao.deleteProduct(code);
+		
+		response.sendRedirect("productList.do");
 	}
 
 }
