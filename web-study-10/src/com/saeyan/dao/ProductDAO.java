@@ -3,6 +3,7 @@ package com.saeyan.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -124,6 +125,25 @@ public class ProductDAO {
 			pstmt.setInt(5, pVo.getCode());
 			pstmt.executeUpdate(); // 쿼리문 실행
 		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+		
+	}
+
+	// c r u Delete
+	public void deleteProduct(String code) {
+		String sql="DELETE PRODUCT WHERE CODE=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, code);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			DBManager.close(conn, pstmt);
